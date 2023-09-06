@@ -1,0 +1,26 @@
+ssh-keygen
+enter a todo
+carpeta c
+usuarios
+carpeta .ssh
+en el git cat (archivo.puf)
+copiar toda la llave
+settings en github
+llave ssh github
+nueva ssh y pegas la llave del gitbash
+
+
+creas un nuevo repositorio en github
+
+crear una nueva carpeta en tu disco duro
+cmd: cd nombre de la carpeta
+nombredelacarpeta git init
+git remote add origin y le pegas el ssh de tu repositorio
+git branch -M main
+git status
+git pull origin main
+echo "nombrecarpeta"
+git add.
+*git status antes de hacer un git push*
+git commit-m "mi primer commit"
+git push origin.main
