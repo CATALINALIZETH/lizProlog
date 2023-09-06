@@ -12,6 +12,9 @@ nueva ssh y pegas la llave del gitbash
 
 creas un nuevo repositorio en github
 
+cd desktop
+ls
+cd ejemplogithun
 crear una nueva carpeta en tu disco duro
 cmd: cd nombre de la carpeta
 nombredelacarpeta git init
