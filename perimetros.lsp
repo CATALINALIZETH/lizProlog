@@ -7,7 +7,7 @@
 )
 
 (defun perirec()
-(princ "PERIMETRO DEL RECTANGULO ")
+(princ "PERIMETRO DEL RECTANGULO  ")
 (princ "Dame el numero de la medida del ancho: ")
 (setq num1 (read))
 (princ "Dame el numero de la medida del largo: ")
