@@ -6,7 +6,7 @@
 (write resultado)
 )
 
-(defun areatri()
+(defun areatria()
 (write "AREA DEL TRIANGULO")
 (princ "Dame el numero de la medida de la base: ")
 (setq num1 (read))

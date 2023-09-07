@@ -1,4 +1,4 @@
-(defun pericua()
+(defun pericuad()
 (write "PERIMETRO DEL CUADRADO: ")
 (princ "Dame el numero de la medida del lado: ")
 (setq num1 (read))
