@@ -1,9 +1,8 @@
 (defun recorre (lista)
-(if (not (recorre nil))
-(princ (car lista))
+(format t "~A-> ~%" (car lista)) ;format es para el salto de linea con el %
+(if lista
 (recorre (cdr lista))
 )
-break 
 )
 
 ;(recorre '(1 2 3 4 5))
