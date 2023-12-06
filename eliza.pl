@@ -1,13 +1,18 @@
 
-eliza:-	writeln('Hola , mi nombre es  Eliza tu  chatbot,
-	por favor ingresa tu consulta,
-	usar solo minúsculas sin . al final:'),
+eliza:-	writeln('Hola , mi nombre es Cenidiabetica tu  chatbot,
+	conozco sobre PRINCESAS DE DISNEY y sobre la enfermedad
+	DIABETES GESTACIONAL. ¿De que te gustaria hablar?,
+	usa solo minusculas sin . al final:'),
 	readln(Input),
 	eliza(Input),!.
 eliza(Input):- Input == ['Adios'],
-	writeln('Adios. espero poder verte ayudado.'), !.
+	writeln('Adios. espero pronto volvamos a hablar.'), !.
 eliza(Input):- Input == ['Adios', '.'],
-	writeln('Adios. espero poder verte ayudado.'), !.
+	writeln('Adios. espero pronto volvamos a hablar.'), !.
+eliza(Input):- Input == ['adios', '.'],
+	writeln('Adios. espero pronto volvamos a hablar.'), !.
+eliza(Input):- Input == ['adios'],
+	writeln('Adios. espero pronto volvamos a hablar.'), !.
 eliza(Input) :-
 	template(Stim, Resp, IndStim),
 	match(Stim, Input),
@@ -41,6 +46,9 @@ template([tu, eres, s(_), _], [flagDo], [2]).
 template([que, eres, tu, s(_)], [flagIs], [2]).
 template([eres, s(_), '?'], [flagIs], [2]).
 
+template([eliza, eres, una, s(_), '?'], [flageres], [3]).
+template([eliza, eres, un, s(_), '?'], [flageres], [3]).
+
 template([como, estas, tu, '?'], [yo, estoy, bien, ',', gracias, por, preguntar, '.'], []).
 
 template([yo, pienso, que, _], [bueno, esa, es, tu, opinion], []).
@@ -61,8 +69,15 @@ likes(zombies).
 likes(manzanas).
 likes(computadoras).
 like(carros).
+like(fiestas).
 
-
+% lo que es eliza: flageres
+elizaeres(X, R):- eres(X), R = [X, 'Si', yo, soy, eso].
+elizaeres(X, R):- \+eres(X), R = [X,'No', yo, no, soy, eso].
+eres(maquina).
+eres(chatbot).
+eres(asistente).
+eres(computadora).
 
 % lo que hace eliza: flagDo
 elizaDoes(X, R):- does(X), R = ['Yes', i, X, and, i, love, it].
@@ -109,6 +124,13 @@ replace0([I|_], Input, _, Resp, R):-
 	nth0(0, Resp, X),
 	X == flagDo,
 	elizaDoes(Atom, R).
+
+% Eliza eres:
+replace0([I|_], Input, _, Resp, R):-
+	nth0(I, Input, Atom),
+	nth0(0, Resp, X),
+	X == flageres,
+	elizaeres(Atom, R).
 
 % Eliza is:
 replace0([I|_], Input, _, Resp, R):-
